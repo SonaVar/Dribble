@@ -1,0 +1,31 @@
+@mixin fade {
+  transition: opacity 0.2s ease-out;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin button-active {
+  cursor: pointer;
+}
+
+@mixin button-inactive--opacity {
+  @include fade;
+  height: 16px;
+  width: 16px;
+  //opacity: 0.7;
+}
+
+@mixin button-active--opacity {
+  @include button-active;
+  opacity: 1;
+}
+
+// @mixin border-card($color) {
+//   background-color: rgba($color, $inactive-opacity);
+//   color: $color;
+//   border: 2px solid $color;
+// }

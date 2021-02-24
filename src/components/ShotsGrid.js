@@ -5,7 +5,7 @@ import ShotsGridItem from "./ShotsGridItem";
 export default function ShotsGrid(props) {
   const grid = props.shots.map(shot => {
     return (
-      <ul key={shot.id}>
+      <section key={shot.id}>
         <ShotsGridItem 
           title={shot.title}
           likesCount={shot.likesCount}
@@ -16,7 +16,7 @@ export default function ShotsGrid(props) {
           videoUrl={shot.videoUrl}
           responsiveThumbnails={shot.responsiveThumbnails}
         />
-      </ul>
+      </section>
     );
   });
 

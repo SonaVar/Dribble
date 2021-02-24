@@ -6,25 +6,85 @@
     @include fade;
 
     color: #8395a7;
-    height: 5rem;
-    padding-left: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    max-width: fit-content;
 
     &:hover {
       background-color: #ee5253;
       cursor: pointer;
       color: $dark-background;
     }
+  }
 
-    &--selected {
-      background-color: darken($white, 5%);
-      color: $dark-background;
+  &__image {
+    @include border-radius(7px);
+    width: 270px;
+    height: 200px;
+  }
+  
+  &__name {
+    display: flex;
+    justify-content: space-between;
+    color: $dark-background;
+    background-color: $white;
+    flex-direction: row;
+    flex-grow: inherit;
+    //border-radius: 16px;
+    height: 28px;
+    align-items: center;
+    //padding-right: 1rem;
+    user-select: none;
+  }
 
-      &:hover {
-        background-color: darken($white, 5%);
-      }
-    }
+  &__box {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    //width: max-content;
+  }
+
+  &__avatar {
+    @include button-active--opacity;
+    margin-right: 0.5rem;
+    border-radius: 100px;
+    max-height: 28px;
+    max-width: 28px;
+  }
+
+  &__label {
+    padding-left: 6px;
+    margin-left: 6px;
+    font-size: x-small;
+    background-color: #C1C1C1;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    padding-right: 6px;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    padding-left: 6px;
+  }
+  
+  &__section {
+    display: flex;
+    align-items: flex-end;
+    font-size: small;
+    color: #C1C1C1;
+  }
+
+  &__comment {
+    padding-right: 2px;
+  }
+  
+  &__like {
+    padding-left: 5px;
+    padding-right: 2px;
   }
 }

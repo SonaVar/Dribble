@@ -13,14 +13,12 @@ export default function Application(props) {
   console.log(state)
   return (
     <main className="layout">
-      <section className="application">
-        <ul>
-          <ShotsGrid 
-            key={state.shot.id}
-            shots={state.shot}
-          />
-        </ul>
-      </section>
+      <div className="application">
+        <ShotsGrid 
+          key={state.shot.id}
+          shots={state.shot}
+        />
+      </div>
     </main>
   );
 }
