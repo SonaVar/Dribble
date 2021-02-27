@@ -1,20 +1,17 @@
 import React, { useState } from "react";
 
 import "./ShotsGridItem.scss";
-import useWindowSize from "../hooks/useWindowSize";
 
 import Image from "react-bootstrap/Image";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ModeCommentIcon from "@material-ui/icons/ModeComment";
 
 export default function ShotsGridItem(props) {
-  const [image, setImage] = useState(props.stillUrl);
+  //sets state on Mouse Over and Mouse Leave
   const [title, setTitle] = useState("");
   const [isShown, setIsShown] = useState(false);
+  const [image, setImage] = useState(props.stillUrl);
 
-  const size = useWindowSize();
-  console.log(size)
-  
   const mouseOverEvent = (bool) => {
     if (bool) {
       setTitle(props.title);
@@ -31,13 +28,14 @@ export default function ShotsGridItem(props) {
   return (
     <div className="user-shot__item" data-testid="shots">
       <picture
+        className="user-shot__picture"
         onMouseOver={() => mouseOverEvent(true)}
         onMouseLeave={() => mouseOverEvent(false)}
         title={title}
       >
         <source type="video/mp4" srcSet={image} />
         <source type={props.mimeType} srcSet={image} />
-        <img class="user-shot__image" src={image} alt="user-shot" />
+        <img className="user-shot__image" src={image} alt="user-shot" />
       </picture>
       {isShown && (
         <div className="user-shot__overlay">
@@ -49,7 +47,7 @@ export default function ShotsGridItem(props) {
       <div className="user-shot__name">
         <div className="user-shot__box">
           <a href={props.author.profileUrl}>
-          < Image className="user-shot__avatar" src={props.author.avatarUrl} onClick/>
+            <Image className="user-shot__avatar" src={props.author.avatarUrl} />
           </a>
           <h5>{props.author.name}</h5>
           <div className="user-shot__label">

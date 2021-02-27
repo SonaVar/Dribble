@@ -1,12 +1,13 @@
-import React from 'react';
+import React from "react";
 
 import ShotsGridItem from "./ShotsGridItem";
 
 export default function ShotsGrid(props) {
-  const grid = props.shots.map(shot => {
+  //renders a Shorts Grid Item for each user shot in the API
+  const grid = props.shots.map((shot) => {
     return (
       <section key={shot.id}>
-        <ShotsGridItem 
+        <ShotsGridItem
           title={shot.title}
           likesCount={shot.likesCount}
           savesCount={shot.savesCount}
